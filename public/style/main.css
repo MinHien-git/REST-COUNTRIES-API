@@ -1,0 +1,357 @@
+/* import section  */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+/* root element  */
+
+:root {
+    /* color */
+    --Dark-Blue: hsl(209, 23%, 22%);
+    --Very-Dark-Blue: hsl(207, 26%, 17%);
+    --Very-Dark-Blue-fs: hsl(200, 15%, 8%);
+    --Dark-Gray: hsl(0, 0%, 52%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+    /* font size */
+    --fs-300: 0.875rem;
+    --fs-600: 1rem;
+    --fs-800: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+img,
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    font-family: 'Nunito Sans', sans-serif;
+    min-height: 100vh;
+    user-select: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* common class */
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+
+/* --Dark-Blue: hsl(209, 23%, 22%);(Dark Mode Elements)
+    --Very-Dark-Blue: hsl(207, 26%, 17%);(Dark Mode Background)
+    --Very-Dark-Blue: hsl(200, 15%, 8%);(Light Mode Text)
+    --Dark-Gray: hsl(0, 0%, 52%);(Light Mode Input)
+    --Very-Light-Gray: hsl(0, 0%, 98%);(Light Mode Background)
+    --White: hsl(0, 0%, 100%);(Dark Mode Text & Light Mode Elements)
+    /* font size 
+    --fs-300: 0.875rem;
+    --fs-600: 1rem;
+    --fs-800: 1rem; */
+
+.dark-blue-bg {
+    background-color: var(--Dark-Blue);
+}
+
+.very-dark-blue-bg {
+    background-color: var(--Very-Dark-Blue);
+}
+
+.dark-gray-bg {
+    background-color: var(--Dark-Gray);
+}
+
+.very-light-gray-bg {
+    background-color: var(--Very-Light-Gray);
+}
+
+.white-bg {
+    background-color: var(--White);
+}
+
+.very-dark-blue-clr {
+    color: var(--Very-Dark-Blue-fs);
+}
+
+.dark-blue-clr {
+    color: var(--Dark-Blue);
+}
+
+.dark-gray-clr {
+    color: var(--Dark-Gray);
+}
+
+.white-clr {
+    color: var(--White)
+}
+
+.fs-300 {
+    font-weight: 300;
+    font-size: var(--fs-300);
+}
+
+.fs-600 {
+    font-weight: 600;
+    font-size: var(--fs-600);
+}
+
+.fs-800 {
+    font-weight: 800;
+    font-size: var(--fs-800);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.box-shadow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+/* Component Class */
+
+.primary-header {
+    padding: 2rem 1rem;
+}
+
+.primary-navigation {
+    margin: 0 auto;
+    max-width: 70rem;
+    justify-content: space-between;
+}
+
+main {
+    height: 100%;
+}
+
+input,
+button {
+    border: 0;
+}
+
+.search-navigation {
+    flex-direction: column;
+    width: 100%;
+    margin-block: 2rem 2.5rem;
+    padding-block: 2rem;
+    --gap: 2rem;
+}
+
+.search-navigation input {
+    width: 100%;
+    padding: 1.5rem 3rem;
+    height: 4rem;
+    border-radius: 5px;
+}
+
+.search {
+    position: relative;
+    height: 4rem;
+}
+
+.submit {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    background-color: transparent;
+}
+
+.search-navigation input:focus {
+    outline-width: 0;
+}
+
+.drop-down-btn {
+    width: 12rem;
+    padding: 1.2rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    height: 4rem;
+}
+
+.drop-down {
+    position: relative;
+    width: 12rem;
+}
+
+.drop-down-content {
+    width: 100%;
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+}
+
+.drop-down-content a {
+    display: block;
+    padding: 0.5rem 1.5rem;
+}
+
+.drop-down-content a:hover {
+    background-color: var(--Dark-Gray)
+}
+
+.drop-down:hover .drop-down-content {
+    display: block;
+}
+
+.nation-display-content {
+    width: 100%;
+    grid-template-columns: minmax(15rem, 1fr);
+    --gap: 3rem;
+}
+
+.card {
+    height: 20rem;
+    width: 100%;
+    border-radius: 15px;
+    --gap: 0rem;
+    padding-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.card>*:nth-child(2) {
+    padding-inline: 1rem;
+}
+
+.index-content {
+    --gap: 0rem;
+    grid-template-columns: minmax(0rem, 1fr) minmax(15rem, 1fr) minmax(0rem, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+.index-content>* {
+    grid-column: 2;
+    justify-self: center;
+}
+
+.nation-content {
+    margin-block: 2rem 4rem;
+    width: 90%;
+    margin-inline: auto;
+    flex-direction: column;
+    --gap: 2rem;
+}
+
+.back-button {
+    padding: 0.5rem 1.2rem;
+    max-width: 7rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    --gap: 0rem;
+}
+
+.info-nation {
+    --gap: 1.5rem
+}
+
+.border {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+}
+
+#flag {
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (min-width:35rem) {
+    .index-content {
+        --gap: 0rem;
+        grid-template-columns: minmax(0rem, 1fr) minmax(34rem, 1fr) minmax(0rem, 1fr);
+        grid-template-rows: auto 1fr;
+    }
+    .nation-display-content {
+        max-width: 35rem;
+        grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    }
+}
+
+@media (min-width:60rem) {
+    body {
+        --fs-300: 1rem;
+        font-size: 20px;
+    }
+    .search-navigation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .search-navigation input {
+        width: 150%;
+    }
+    .nation-display-content {
+        max-width: 70rem;
+        width: 100%;
+        grid-template-columns: repeat(4, minmax(12rem, 1fr));
+        --gap: 2rem;
+    }
+    .index-content {
+        grid-template-columns: minmax(0.1rem, 1fr) minmax(60rem, 1fr) minmax(0.1rem, 1fr);
+    }
+    .nation-content {
+        max-width: 70rem;
+        width: 100%;
+    }
+    .info-nation {
+        max-width: 90rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        --gap: 0rem;
+        column-gap: 2rem;
+        grid-template-rows: 8rem 10rem 3rem;
+        grid-template-areas: 'image image header header' 'image image content1 content2' 'image image border border';
+    }
+    #content1 {
+        grid-area: content1;
+    }
+    #content2 {
+        grid-area: content2;
+    }
+    #flag {
+        grid-area: image;
+        height: 100%;
+        width: 100%;
+    }
+    #borders {
+        grid-area: border;
+        margin-block: auto 1rem;
+    }
+    #header {
+        grid-area: header;
+        margin-block: auto 3rem;
+        font-size: 2rem;
+    }
+}

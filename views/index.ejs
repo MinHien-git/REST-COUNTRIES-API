@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor|Countries Color Theme Switcher</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+
+<body class="very-light-gray-bg" id="primary-body">
+    <%- include('./includes/header-navigation') %>
+        <main class="grid index-content">
+            <%- include('./includes/filter-bar') %>
+                <% if(nations.length > 0) {%>
+                    <div class="grid nation-display-content">
+
+                        <% for(const nation of nations){%>
+                            <a class="grid card white-bg box-shadow element" href="/<%= nation.name.common%>">
+                                <img src=<%=nation.flags.svg%> alt ="flag">
+                                <div class="grid content">
+                                    <h2 class="fs-800 very-dark-blue-clr text">
+                                        <%= nation.name.common%>
+                                    </h2>
+                                    <p class="fs-300 very-dark-blue-clr text">
+                                        <span class="fs-600 very-dark-blue-clr text">Population: </span>
+                                        <%= nation.population%>
+                                    </p>
+                                    <p class="fs-300 very-dark-blue-clr text">
+                                        <span class="fs-600 very-dark-blue-clr text">Region: </span>
+                                        <%= nation.region%>
+                                    </p>
+                                    <p class="fs-300 very-dark-blue-clr text">
+                                        <span class="fs-600 very-dark-blue-clr text">Capital: </span>
+                                        <%= nation.capital%>
+                                    </p>
+                                </div>
+                            </a>
+                            <% }%>
+
+                    </div>
+                    <%}else{%>
+                        <div>
+                            <img src="/style/Questions-rafiki.svg">
+                            <a href="/" class="fs-300 very-dark-blue-clr text box-shadow">Oops No nation match your search click here to return</a>
+                        </div>
+                        <%}%>
+
+        </main>
+        <script src="/script/toggle.js"></script>
+        <script src="/script/app.js"></script>
+</body>
+
+</html>

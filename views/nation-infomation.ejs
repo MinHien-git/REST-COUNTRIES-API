@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor|Countries Color Theme Switcher</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+
+<body class="very-light-gray-bg" id="primary-body">
+    <%- include('./includes/header-navigation') %>
+
+        <main class="flex nation-content">
+            <a href="/" class="flex back-button very-dark-blue-clr white-bg box-shadow element text"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
+            <div class="grid info-nation">
+                <img src="<%=nation.flags.svg%>" alt="flag" id="flag">
+                <h2 class="fs-800 very-dark-blue-clr text" id="header">
+                    <%= nation.name.common%>
+                </h2>
+
+                <div id="content1">
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Native Name: </span>
+                        <%for (const [key, value] of Object.entries(nation.name.nativeName)) {%>
+                            <%= value.common%>
+                                <%}%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Population: </span>
+                        <%= nation.population%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Region: </span>
+                        <%= nation.region%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Sub Region: </span>
+                        <%= nation.subregion%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Capital: </span>
+                        <%= nation.capital%>
+                    </p>
+                </div>
+                <div id="content2">
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Top Level Domain: </span>
+                        <%= nation.tld%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Currencies: </span>
+                        <%for (const [key, value] of Object.entries(nation.currencies)) {%>
+                            <%= value.name%>
+                                <%}%>
+                    </p>
+                    <p class="fs-300 very-dark-blue-clr text">
+                        <span class="fs-600 very-dark-blue-clr text">Languages: </span>
+                        <% for(const [key,value] of Object.entries(nation.languages)){%>
+                            <%= value %>
+                                <%}%>
+                    </p>
+                </div>
+                <div id="borders">
+                    <span class="fs-600 very-dark-blue-clr text">Border Countries: </span>
+
+                    <% if(nation["borders"] != null){%>
+                        <% for(const border of nation.borders){ %>
+                            <span class="fs-300 very-dark-blue-clr border white-bg box-shadow text element"><%=border  %> </span>
+                            <%}}else {%>
+                                <span class="fs-300 very-dark-blue-clr text">none </span>
+                                <%}%>
+
+                </div>
+            </div>
+        </main>
+        <script src="/script/toggle.js"></script>
+        <script src="/script/app.js"></script>
+</body>
+
+</html>
