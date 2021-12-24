@@ -314,13 +314,13 @@ button {
         width: 150%;
     }
     .nation-display-content {
-        max-width: 70rem;
+        max-width: 90rem;
         width: 100%;
-        grid-template-columns: repeat(4, minmax(12rem, 1fr));
+        grid-template-columns: repeat(4, minmax(15rem, 1fr));
         --gap: 2rem;
     }
     .index-content {
-        grid-template-columns: minmax(0.1rem, 1fr) minmax(60rem, 1fr) minmax(0.1rem, 1fr);
+        grid-template-columns: minmax(0.1rem, 1fr) minmax(75rem, 1fr) minmax(0.1rem, 1fr);
     }
     .nation-content {
         max-width: 70rem;
